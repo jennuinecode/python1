@@ -1,0 +1,10 @@
+* {
+    background-color: red;
+}
+h1 {
+    color: blue;
+}
+#userhint {
+    width: 200px;
+    background-color: green;
+}

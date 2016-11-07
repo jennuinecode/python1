@@ -1,0 +1,29 @@
+/*
+#registration {
+    width: value;
+    background-color: grey;
+    margin: 20%;
+    border-radius: 5%;
+}
+
+#registration form {
+    width: 100%;
+    margin-top: 2em;
+}
+#registration input{
+    display: block;
+    float: center;
+    margin: .5em;
+}
+#registration button {
+    float: right;
+}*/
+
+.jumbotron {
+    height:auto;
+    min-height:
+    text-align: center;
+}
+button {
+    margin-top: 2em;
+}

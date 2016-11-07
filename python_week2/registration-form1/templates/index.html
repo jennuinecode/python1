@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Online Doc</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- bootstrap css file  -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- jquery cdn  -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- bootstrap jquery cdn  -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse" id="header">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">Jennifer's Project</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form form-inline pull-right" action="/login" method="POST">
+                            <input type="text" name="email" placeholder="Email">
+                            <input type="password" name="password" placeholder="Password">
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="/register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"</li>
+                <li data-target="#carousel" data-slide-to="2"</li>
+                <li data-target="#carousel" data-slide-to="3"</li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+
+                <div class="item active">
+                    <img src="{{ url_for('static', filename='1.jpg') }}" alt="scenic view">
+                </div>
+
+                <div class="item">
+                    <img src="{{ url_for('static', filename='2.jpg') }}" alt="scenic view">
+                </div>
+
+                <div class="item">
+                    <img src="{{ url_for('static', filename='3.jpg') }}" alt="scenic view">
+                </div>
+
+                <div class="item">
+                    <img src="{{ url_for('static', filename='4.jpg') }}" alt="scenic view">
+                </div>
+            </div>
+        </div><!-- end of carousel  -->
+        <div class="container-fluid" id="adjectives">
+            <div class="row">
+                <div class="col-md-4 vertical_line">
+                    <h3>Innovative</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                <div class="col-md-4 vertical_line">
+                    <h3>Cutting-Edge</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                <div class="col-md-4 vertical_line">
+                    <h3>Dedicated</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div> <!-- end of first three blurbs -->
+
+        <nav class="navbar navbar-inverse navbar-bottom">
+                <div class="container-fluid" id="footer">
+                    <p><a href="">Register</a></p>
+                    <p><a href="">Help</a></p>
+                    <p><a href="">Help</a></p>
+                </div>
+        </nav> <!-- end of footer -->
+
+
+    </body>
+</html>

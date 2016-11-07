@@ -1,0 +1,30 @@
+container {
+  width: 970px;
+  margin: auto;
+  padding: 20px;
+}
+#score {
+  border: 1px solid black;
+  padding: 10px;
+  color: blue;
+}
+
+
+.building {
+  padding: 20px;
+  display: inline-block;
+  width: 200px;
+  height: auto;
+  border: 1px solid black;
+  text-align: center;
+}
+
+
+#activity_list {
+  margin-top: 20px;
+  padding-left: 10px;
+  width: 970px;
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid black;
+}

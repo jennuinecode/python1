@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Submitted Info</title>
+    </head>
+    <body>
+        <h1>Your Form Was Submitted!</h1>
+        <p> Name: {{session['name']}}</p>
+        <p> Location: {{session['location']}} </p>
+        <p> Language: {{session['language']}} </p>
+        <p> Comment: {{session['comment']}} </p>
+        <form action="/" method="get">
+            <button class="btn btn-success" type='submit' action='/' method='get'>Go Back</button>
+        </form>
+
+    </body>
+</html>

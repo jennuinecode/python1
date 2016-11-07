@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Great Number Game</title>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.css"/>
+    </head>
+    <body>
+        <div>
+            <h1>Welcome to the<br> Great Number Game!</h1>
+            <p>I am thinking of a number between 1 and 100.</p>
+            <h2> {{ session['answer'] }}</h2>
+            {% if session['answer'] == 'Good Job!' %}
+
+                <form action="/" method="get">
+                    <input type="submit" value="play again"></input>
+                </form>
+                {{session.pop('answer')}}
+            {% endif %}
+
+
+            <form action="/guess" method="post">
+                <input type="text" name="guess"></input>
+                <input type="submit" value="submit"></input>
+            </form>
+        </div>
+    </body>
+</html>

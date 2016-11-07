@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>All The Ninjas Turtles</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
+    </head>
+    <body>
+
+    {% if color %}
+    <img src ="{{url_for('static', filename=color + '.jpg') }}" alt="{{color}}">
+    <p>this is {{color}} !</p>
+
+    {% else %}
+        <img src="{{ url_for('static', filename='donatello.jpg') }}" alt="Donatello">
+        <img src="{{ url_for('static', filename='leonardo.jpg') }}" alt="Leonardo">
+        <img src="{{ url_for('static', filename='michelangelo.jpg') }}" alt="Michelangelo">
+        <img src="{{ url_for('static', filename='raphael.jpg') }}" alt="Raphael">
+    {% endif %}
+    </body>
+</html>

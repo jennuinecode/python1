@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Wall</title>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    </head>
+    <body>
+        <h2>You are now logged in</h1>
+        <form action='/logout' method='GET'>
+            <button type="submit">LOGOUT</button>
+        </form>
+        <p>Post a message:</p>
+        <form action='/post' method='POST'>
+            <textarea name="content" cols="100" rows="5"></textarea>
+            <br>
+            <button type="submit">POST</button>
+        </form>
+         {% for post in posts %}
+            <p>{{ post['first_name'] }} {{ post['last_name'] }} posted on: {{post['created_at'] }}</b><br> {{post['content'] }}</p>
+
+             <form action='/comment' method='POST'>
+                 <textarea name="comment" cols="50" rows="5"></textarea>
+                 <input type="hidden" name="post_id" value="62">
+                 <br>
+                 <button type="submit">COMMENT</button>
+            </form>
+
+
+        {% for comment in post['comments'] %}
+                {{ comment['first_name'] }} {{ comment['last_name'] }} {{comment['content']}} {{comment['created_at']}}
+                <br>
+            {% endfor %}
+            
+        {% endfor %}
+
+
+
+    </body>
+
+</html>

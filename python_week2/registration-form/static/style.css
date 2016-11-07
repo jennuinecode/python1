@@ -1,0 +1,26 @@
+#footer p {
+    display: inline-block;
+    vertical-align: middle;
+}
+#footer {
+    padding: 1em;
+    text-align: center;
+}
+
+.navbar {
+    margin: 0px;
+}
+.carousel {
+    margin: 0em 0em 2em 0em;
+}
+
+#adjectives {
+    background-color:  #D5DCDE;
+    margin: 0em 0em 2em 0em;
+}
+
+.vertical_line {
+    text-align: center;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}

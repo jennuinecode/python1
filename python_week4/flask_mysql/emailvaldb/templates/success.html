@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sucess</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    </head>
+    <body>
+        <p>The email you entered is a VALID email address! Thank you!</p>
+
+        <h3><u>Email Addresses Entered:</u></h3>
+        {% for email in emails %}
+            {{ email }}
+        {% endfor %}
+    </body>
+</html>

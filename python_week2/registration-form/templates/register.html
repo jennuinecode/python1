@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Online Doc</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- bootstrap css file  -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- jquery cdn  -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- bootstrap jquery cdn  -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='registration_style.css') }}">
+    </head>
+    <body>
+
+
+        <div class="container-fluid">
+            <div class="jumbotron" id="registration">
+                <div class="col-md-4">
+                    <div class="col-md-6 form-content">
+                        <form class="form-horizontal" action="/create_user" method="POST">
+                            <label for="first_name">First Name:</label>
+                            <input type="text" name="first_name" placeholder="First Name">
+                            {% with messages = get_flashed_messages(category_filter = "first_name_error") %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <p>{{ message }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                                {% endwith %}
+
+                            <label for="lastt_name">Last Name:</label>
+                            <input type="text" name="last_name" placeholder="Last Name">
+                            {% with messages = get_flashed_messages(category_filter = "last_name_error") %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <p>{{ message }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                                {% endwith %}
+
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" placeholder="Email">
+                            {% with messages = get_flashed_messages(category_filter = "email_error") %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <p>{{ message }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                                {% endwith %}
+
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" placeholder="Password">
+                            {% with messages = get_flashed_messages(category_filter = "password_error") %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <p>{{ message }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                            <input type="password" name="confirm_password" placeholder="Confirm Password">
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

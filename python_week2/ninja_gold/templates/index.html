@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Gold!</title>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    </head>
+    <body>
+        <div class="container">
+            <div id="score">
+                <h5>Your Gold</h5>
+                {{session['gold']}}
+            </div>
+
+            <div id="farm" class="building">
+                <h5>Farm</h5>
+                <p>(earns 10-20 golds)</p>
+                <form action="/process_money/farm" method="post">
+                  <input type="submit" name="houseGold" value="Find Gold!">
+                </form>
+            </div>
+
+            <div id="cave" class="building">
+                <h5>Cave</h5>
+                <p>(earns 5-10 golds)</p>
+                <form action="/process_money/cave" method="post">
+                  <input type="submit" name="caveGold" value="Find Gold!">
+                </form>
+            </div>
+
+            <div id="house" class="building">
+                <h5>House</h5>
+                <p>(earns 2-5 golds)</p>
+                <form action="/process_money/house" method="post">
+                  <input type="submit" name="houseGold" value="Find Gold!">
+                </form>
+            </div>
+
+            <div id="casino" class="building">
+                <h5>Casino</h5>
+                <p>(earns 0-50 golds)</p>
+                <form action="/process_money/casino" method="post">
+                  <input type="submit" name="casinoGold" value="Find Gold!">
+                </form>
+            </div>
+
+            <div id="activity_list">
+              <h5>Activities</h5>
+              {% for message in session['activities'] %}
+              {% if 'Lost' in message %}
+              <p style="color: red;">{{ message }}</p>
+              {% else %}
+              <p style="color: green;">{{ message }}</p>
+              {% endif %}
+              {% endfor %}
+            </div>
+        </div>
+<!-- end of container -->
+    </body>
+</html>
